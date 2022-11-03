@@ -8,26 +8,29 @@ function header() {
     return (
         <>
         <div className="header">
-        {/* <!-- Begin Nav  --> */}
-        <ul id="nav">
-          <li><NavLink className="nav-link" to="/home" onClick={this}>Home</NavLink></li>
-          <li><NavLink className="nav-link" to="/home" onClick={this}>Product</NavLink></li>
-          <li><NavLink className="nav-link" to="/about" onClick={this}>About</NavLink></li>
-          <li><NavLink className="nav-link" to="/home" onClick={this}>Contact</NavLink></li>
-          <li><NavLink className="nav-link" to="/login" onClick={this}>Login</NavLink></li>
-          
-        </ul>
-        {/* <!-- End Nav  --> */}
+        
+        <div className='nav-left'>
+            <ul className="nav-list">
+                <li className='nav-list__item'><NavLink className="nav-link" to="/home" onClick={this}>Home</NavLink></li>
+                <li className='nav-list__item'><NavLink className="nav-link" to="/product" onClick={this}>Product</NavLink></li>
+                <li className='nav-list__item'><NavLink className="nav-link" to="/about" onClick={this}>About</NavLink></li>
+                <li className='nav-list__item'><NavLink className="nav-link" to="/contact" onClick={this}>Contact</NavLink></li>
+                
+            </ul>
+            <div className="search-btn">
+                <i className="search-icon ti-search"></i>
+              </div>
+        </div>
+        <div className="nav-right">
 
-        {/* <!-- Begin Search  --> */}
-        <div className="search-btn">
-          <i className="search-icon ti-search"></i>
+            <ul className="nav-list">
+                <li className='nav-list__item'><NavLink className="nav-link" to="/login" onClick={this}>Login</NavLink></li>
+            </ul>
+
         </div>
-        <div id="mobile-menu" className="mobile-menu-btn">
-          <i className="menu-icon ti-menu"></i>
-        </div>
-        {/* <!-- End Search  --> */}
-      </div></>
+       
+      </div>
+      </>
     )
 }
 
