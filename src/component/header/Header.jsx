@@ -12,7 +12,7 @@ function header() {
         <ul id="nav">
           <li><NavLink className="nav-link" to="/home" onClick={this}>Home</NavLink></li>
           <li><NavLink className="nav-link" to="/home" onClick={this}>Product</NavLink></li>
-          <li><NavLink className="nav-link" to="/home" onClick={this}>About</NavLink></li>
+          <li><NavLink className="nav-link" to="/about" onClick={this}>About</NavLink></li>
           <li><NavLink className="nav-link" to="/home" onClick={this}>Contact</NavLink></li>
           <li><NavLink className="nav-link" to="/login" onClick={this}>Login</NavLink></li>
           
