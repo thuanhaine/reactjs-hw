@@ -1,6 +1,6 @@
 
 import './Header.css'
-import '../reponsiveCss/Reponsive.css'
+// import '../reponsiveCss/Reponsive.css'
 import { NavLink } from 'react-router-dom';
 
 

@@ -7,7 +7,7 @@ import Home from './component/main/Home';
 import Footer from './component/footer/Footer.jsx';
 import Login from './component/login/Login.jsx';
 import Signup from './component/signup/Signup.jsx';
-import About from './component/header/about/About';
+import About from './component/about/About';
 function App() {
   return (
     <div className="App">
