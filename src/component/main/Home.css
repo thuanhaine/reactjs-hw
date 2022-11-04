@@ -1,3 +1,7 @@
+* {
+box-sizing: border-box;
+}
+
 .home {
     background-color: rgb(238, 238, 238);
     /* background: linear-gradient(180deg, rgb(168, 250, 232) 0%, rgb(89, 224, 241) 100%); */
@@ -5,24 +9,28 @@
     margin: 0 auto;
     box-sizing: border-box;
 }
-.home__container {
-    background-color: #ccc;
+.home__header {
+    background-color: rgb(224, 224, 224);
     margin: 0 auto;
     margin-top: 22px;
-    width: 1200px;
+    width: 1260px;
     height: 85vh;
 }
-.home__container-nav {
+.home__nav {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.home__container-nav--list {
+.home__nav--list {
     display: flex;
     margin: 22px 0;
-    margin-left: calc(1200*0.2px);
+    margin-left: 240px;
+    gap: 2px;
+
     
     
 }
-.home__container-nav--item {
+.home__nav--item {
     min-width: 150px;
     height: 44px;
     display: block;
@@ -32,19 +40,80 @@
     padding: 0;
     
 }
-.home__container-nav--item:hover,
-.home__container-nav--item:hover .home__container-nav--link {
+.home__nav__direc--item:hover,
+.home__nav__direc--item:hover .btn-direc-page,
+.home__nav--item:hover,
+.home__nav--item:hover .home__nav--link {
     background-color: rgb(0, 103, 199);
     color: white;
 }
-.home__container-nav--link {
+.home__nav--link {
     font-size: 20px;
     height: 100%;
     width: 100%;
     display: block;
 }
-.home__container-nav--link,
-.home__container-nav__direc--link {
+.home__nav__direc--link:hover,
+.home__nav--link,
+.home__nav__direc--link {
     text-decoration: none;
 
+}
+
+.home__nav__direc--list {
+    display: flex;
+    margin-right: 20px;
+
+}
+.home__nav__direc--item {
+
+    background-color: white;
+    align-items: center;
+    width: 50px;
+    height: 44px;
+}
+.home__nav__direc--link {
+    font-size: 26px;
+    line-height: 44px;
+    height: 100%;
+    width: 100%;
+    display: block;
+
+}
+.btn-direc-page {
+    background-color: white;
+
+}
+
+.home__container {
+    display: flex;
+}
+
+.home__container-subnav{
+    flex: 1;
+    margin-left: 20px;
+    background-color: white;
+    width: 100%;
+    text-align: left;
+
+}
+.home__container-subnav--title {
+    font-size: 26px;
+    margin: 8px 0;
+}
+.home__container-subna__item {
+    padding: 4px 0;
+    padding-left: 24px;
+    font-size: 20px;
+
+}
+.home__container-subna__item:hover {
+    background-color: rgb(0, 103, 199);
+    color: white;
+    cursor: pointer;
+}
+.home__container-content {
+    flex: 5;
+    margin:0 20px;
+    background-color: red;
 }

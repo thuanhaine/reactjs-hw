@@ -12,7 +12,6 @@ function header() {
         <div className='nav-left'>
             <ul className="nav-list">
                 <li className='nav-list__item'><NavLink className="nav-link" to="/home" onClick={this}>Trang chủ</NavLink></li>
-                <li className='nav-list__item'><NavLink className="nav-link" to="/product" onClick={this}>Sản Phẩm</NavLink></li>
                 <li className='nav-list__item'><NavLink className="nav-link" to="/about" onClick={this}>Thông Tin</NavLink></li>
                 <li className='nav-list__item'><NavLink className="nav-link" to="/contact" onClick={this}>Liên Hệ</NavLink></li>
                 
