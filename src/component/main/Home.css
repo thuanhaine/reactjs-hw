@@ -1,4 +1,50 @@
 .home {
-    background: linear-gradient(90deg, rgb(56, 235, 65) 0%,     rgb(45, 80, 235) 100%);
+    background-color: rgb(238, 238, 238);
+    /* background: linear-gradient(180deg, rgb(168, 250, 232) 0%, rgb(89, 224, 241) 100%); */
     min-height:85vh;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.home__container {
+    background-color: #ccc;
+    margin: 0 auto;
+    margin-top: 22px;
+    width: 1200px;
+    height: 85vh;
+}
+.home__container-nav {
+    display: flex;
+}
+.home__container-nav--list {
+    display: flex;
+    margin: 22px 0;
+    margin-left: calc(1200*0.2px);
+    
+    
+}
+.home__container-nav--item {
+    min-width: 150px;
+    height: 44px;
+    display: block;
+    background-color: white;
+    text-align: center;
+    line-height: 44px;
+    padding: 0;
+    
+}
+.home__container-nav--item:hover,
+.home__container-nav--item:hover .home__container-nav--link {
+    background-color: rgb(0, 103, 199);
+    color: white;
+}
+.home__container-nav--link {
+    font-size: 20px;
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+.home__container-nav--link,
+.home__container-nav__direc--link {
+    text-decoration: none;
+
 }
