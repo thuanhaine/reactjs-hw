@@ -1,10 +1,15 @@
 import './Home.css';
 import { NavLink } from 'react-router-dom';
+import logo from './logo.jpg'
 
 function home() {
     return (
         <>
             <div className="home">
+                <div className='home-logo'>
+                    <img src={logo} alt="Logo" className="home-logo-img"/>
+
+                </div>
                 <div className='home__header'>
                     <div className='home__nav'>
                         <ul className='home__nav--list'>
@@ -34,7 +39,10 @@ function home() {
                     </div>
                     <div className='home__container'>
                         <div className='home__container-subnav'>
-                                <h3 className='home__container-subnav--title'>Danh Muc</h3>
+                                <div className='home__container-subnav--box'>
+                                    <i class="fa-solid fa-list-ul"></i>
+                                    <h3 className='home__container-subnav--title'>Danh Muc</h3>
+                                </div>
                                 <ul className='home__container-subna__list'>
                                     <li className='home__container-subna__item'>Truyen Hay</li>
                                     <li className='home__container-subna__item'>Truyen thieu nhi</li>
