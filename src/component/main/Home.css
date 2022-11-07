@@ -7,6 +7,8 @@ box-sizing: border-box;
     /* background: linear-gradient(180deg, rgb(168, 250, 232) 0%, rgb(89, 224, 241) 100%); */
     margin: 0 auto;
     box-sizing: border-box;
+    height: auto;
+    padding-bottom: 40px;
 }
 
 .home-logo{
@@ -26,10 +28,8 @@ box-sizing: border-box;
 
 .home__header {
     background-color: rgb(224, 224, 224);
-    margin: 0 auto;
-    margin-top: 22px;
+    margin: 22px auto;
     width: 1260px;
-    height: 85vh;
 }
 .home__nav {
     display: flex;
@@ -113,6 +113,7 @@ box-sizing: border-box;
     background-color: white;
     width: 100%;
     text-align: left;
+    height: 200px;
 
 }
 .home__container-subnav--box {
@@ -145,5 +146,6 @@ box-sizing: border-box;
     margin:0 20px;
     background-color:rgb(224, 224, 224);
     height: auto;
+    display: block;
 }
 

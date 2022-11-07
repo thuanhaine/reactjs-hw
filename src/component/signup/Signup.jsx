@@ -18,7 +18,7 @@ function signup() {
                     
                     <div className='signup-input-form'>
                         <span className='signup-input-span'>Password</span>
-                        <input type="text" className='signup-input-box' placeholder='Enter Password'></input>
+                        <input type="password" className='signup-input-box' placeholder='Enter Password'></input>
                     </div>
                     <div className='signup-input-form'>
                         <span className='signup-input-span'>Email</span>

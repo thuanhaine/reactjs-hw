@@ -1,9 +1,15 @@
 import './Home.css';
 import Page1 from '../product/page1/Page1';
-import { NavLink } from 'react-router-dom';
-import logo from './logo.jpg'
+import Page2 from '../product/page2/Page2';
+import { useState } from 'react';
 
-function home() {
+import { NavLink } from 'react-router-dom';
+import logo from '../img/logo.jpg'
+
+
+
+function Home() {
+  
     return (
         <>
             <div className="home">
@@ -24,14 +30,11 @@ function home() {
                         <div className='home__nav--direc'>
                             <ul className='home__nav__direc--list'>
                                 <li className='home__nav__direc--item'>
-                                    <NavLink className="home__nav__direc--link" to="/login" onClick={this}>
                                         <i class="fa fa-angle-left btn-direc-page"></i>
-                                    </NavLink>
                                 </li>
                                 <li className='home__nav__direc--item'>
-                                    <NavLink className="home__nav__direc--link" to="/login" onClick={this}>
                                         <i class="fa fa-angle-right btn-direc-page"></i>
-                                    </NavLink>
+
                                 </li>
                                 
                             </ul>
@@ -50,17 +53,18 @@ function home() {
                                     <li className='home__container-subna__item'>Truyen van hoc</li>
                                 </ul>
                         </div>
-                        <div className='home__container-content'>
-                                <Page1/>
+                        <div id='home__container-content'>
+                                <Page1 />
+                                
                          </div>
                         
-
                     </div>
 
                 </div>
             </div>
         </>
     );
+    
 }
 
-export default home;
+export default Home;
