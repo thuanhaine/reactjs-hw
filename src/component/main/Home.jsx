@@ -1,4 +1,5 @@
 import './Home.css';
+import Page1 from '../product/page1/Page1';
 import { NavLink } from 'react-router-dom';
 import logo from './logo.jpg'
 
@@ -50,7 +51,7 @@ function home() {
                                 </ul>
                         </div>
                         <div className='home__container-content'>
-                                
+                                <Page1/>
                          </div>
                         
 
