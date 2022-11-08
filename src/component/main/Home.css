@@ -42,7 +42,7 @@ box-sizing: border-box;
 .home__nav--list {
     display: flex;
     margin: 22px 0;
-    margin-left: 240px;
+    margin-left: 245px;
     gap: 2px;
 
     
@@ -80,7 +80,7 @@ box-sizing: border-box;
 
 .home__nav__direc--list {
     display: flex;
-    margin-right: 20px;
+    margin-right: 25px;
 
 }
 .home__nav__direc--item {
@@ -108,13 +108,11 @@ box-sizing: border-box;
 }
 
 .home__container-subnav{
-    flex: 1;
-    margin-left: 20px;
     background-color: white;
-    width: 100%;
     text-align: left;
-    height: 200px;
-
+    height: 200px;  
+    width: 210px;
+    margin: 0 15px;
 }
 .home__container-subnav--box {
     display: flex;
@@ -130,6 +128,7 @@ box-sizing: border-box;
     font-size: 26px;
     margin: 8px 0;
 }
+
 .home__container-subna__item {
     padding: 4px 0;
     padding-left: 24px;
@@ -142,7 +141,7 @@ box-sizing: border-box;
     cursor: pointer;
 }
 .home__container-content {
-    flex: 5;
+    width: 1000px;
     margin:0 20px;
     background-color:rgb(224, 224, 224);
     height: auto;
