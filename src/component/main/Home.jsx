@@ -1,7 +1,5 @@
 import './Home.css';
 import Page1 from '../product/page1/Page1';
-import Page2 from '../product/page2/Page2';
-import { useState } from 'react';
 
 import { NavLink } from 'react-router-dom';
 import logo from '../img/logo.jpg'
