@@ -20,7 +20,7 @@ function Home() {
                         <ul className='home__nav--list'>
                             <li className='home__nav--item'><NavLink className="home__nav--link" to="/home" onClick={this}>Mới Nhất</NavLink></li>
                             <li className='home__nav--item'><NavLink className="home__nav--link" to="/home" onClick={this}>Bán Chạy</NavLink></li>
-                            <li className='home__nav--item'><NavLink className="home__nav--link" to="/home" onClick={this}>Mới Nhất</NavLink></li>
+                            <li className='home__nav--item'><NavLink className="home__nav--link" to="/home" onClick={this}>Giảm Giá</NavLink></li>
                             
                             
                             

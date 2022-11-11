@@ -17,25 +17,19 @@ function Page1() {
     
     return(
         <>
-        <ul className='product-list'>
-            {books.map(book => (
-                <li className="product-item" key={book.id}>
-                <img className='product-img' src={ImgProduct} alt="product img"/>
-                <div className='product-info'>
-                   <p className='product-name'>{book.name}</p>
-                   <p className='product-author'>{book.author || "Đang cập nhật ..."}</p>
-                   <p className='product-price'>{book.price}</p>
-                </div>
-                <button className='product-btn-buy'>Buy</button>
-
-           </li>
-
-            ))}
-            
-
-              
-
-        </ul>
+            <ul className='product-list'>
+                {books.map(book => (
+                    <li className="product-item" key={book.id}>
+                    <img className='product-img' src={ImgProduct} alt="product img"/>
+                    <div className='product-info'>
+                    <p className='product-name'>{book.name}</p>
+                    <p className='product-author'>{book.author || "Đang cập nhật ..."}</p>
+                    <p className='product-price'>{book.price}</p>
+                    </div>
+                    <button className='product-btn-buy'>Buy</button>
+            </li>
+                ))}
+            </ul> 
         </>
     )
 }
