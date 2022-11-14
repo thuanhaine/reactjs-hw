@@ -31,7 +31,22 @@ function Signup() {
   })
   .then(data => data.json())
   .then(data => {
-    alert("Signup successful")
+    if(data.status === 200 )
+      {
+        alert("Success")
+      }
+    
+    else {
+      if(data.status === 401 )
+      {
+        alert("Error Username")
+      }
+    
+      if(data.status === 402 )
+      {
+        alert("Error Email")
+      }
+    }
   })
   .catch(err => console.log(err.data))
 
