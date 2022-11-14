@@ -22,7 +22,7 @@ function Signup() {
     };
     console.log(dataUser);
 
-  fetch('http://localhost:3002/api/signup', {
+  fetch('https://resfulapitest.herokuapp.com/api/signup', {
     method:  'POST',
     headers: {
       'Content-Type': 'application/json',

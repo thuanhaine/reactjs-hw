@@ -20,7 +20,7 @@ function Login() {
     };
     console.log(dataUser);
 
-    fetch("http://localhost:3002/api/login", {
+    fetch("https://resfulapitest.herokuapp.com/api/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -32,7 +32,6 @@ function Login() {
         if(data.status == 200){
             alert("SuccessLogin")
             history.replace('/')
-    
     }
         else alert("sai")
       })
