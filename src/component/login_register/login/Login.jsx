@@ -1,7 +1,6 @@
 import { NavLink, useHistory } from "react-router-dom";
 import "./Login.css";
 import { useState } from "react";
-import { Redirect} from 'react-router-dom'
 
 let dataUser = {
   name: String,
@@ -48,6 +47,7 @@ function Login() {
               <span className="login-input-span">Username</span>
               <input
                 type="text"
+                required
                 className="login-input-box"
                 placeholder="Nhap username"
                 onChange={e => setName(e.target.value)}
@@ -57,6 +57,7 @@ function Login() {
               <span className="login-input-span">Password</span>
               <input
                 type="password"
+                required
                 className="login-input-box"
                 placeholder="Nhap Password"
                 onChange={ e => setPassword(e.target.value)}

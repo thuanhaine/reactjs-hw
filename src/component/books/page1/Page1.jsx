@@ -1,4 +1,3 @@
-import ImgProduct from "../../img/girl.jpg";
 import "./Page1.css";
 import { useState, useEffect } from "react";
 
@@ -27,7 +26,7 @@ function Page1() {
               </p>
               <p className="product-price">Giá <strong>{book.price}đ</strong></p>
               <p className="product-available">{book.availableNumber ? `Còn: ${book.availableNumber} quyển` : "Hết Hàng !" }</p>
-              <p className="product-soldNumber">{book.soldNumber ? `đã bán: ${book.soldNumber} quyển` : "Chưa bán được gì !" }</p>
+              <p className="product-soldNumber">{book.soldNumber ? `Đã bán: ${book.soldNumber} quyển` : "Chưa bán được gì !" }</p>
             </div>
             <button className="product-btn-buy">Buy</button>
           </li>

@@ -11,12 +11,15 @@ import About from './component/about/About';
 import Books from './component/books/Books';
 import Blog  from './component/blog/Blog';
 import Contact from './component/contact/Contact';
+
+
 function App() {
+
   return (
     <div className="App">
       <Header />
         <Switch>
-          <Route exact path="/home" component={Home} />
+          <Route exact path="/" component={Home} />
           <Route exact path="/About" component={About} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/signup" component={Signup} />
@@ -30,6 +33,5 @@ function App() {
     </div>
   );
 }
-
 
 export default App;

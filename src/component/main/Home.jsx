@@ -1,7 +1,7 @@
 import './Home.css';
 
-import { NavLink } from 'react-router-dom';
-import logo from '../img/logo.jpg'
+// import { NavLink } from 'react-router-dom';
+// import logo from '../img/logo.jpg'
 
 
 
@@ -12,7 +12,6 @@ function Home() {
             <div className="home">
                 {/* slide product */}
                 {/* de xuat product */}
-                
             </div>
         </>
     );

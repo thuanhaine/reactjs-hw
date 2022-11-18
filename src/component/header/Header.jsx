@@ -1,11 +1,12 @@
 import "./Header.css";
-import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import HeaderBtnLogin from "./header_btn_login/Header_btn_login";
 import HeaderUser from "./header_user/Header_user";
 
 function Header() {
-  const [isLogin, setIsLogin] = useState(false);
+
+  const isLogin = false;
+
   return (
     <>
       <div className="heading">
