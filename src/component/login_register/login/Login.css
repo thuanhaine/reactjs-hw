@@ -52,7 +52,7 @@
  margin: 0;
 }
 .btn-login {
-    width: 50%;
+    width: 200px;
     height: 40px;
     background: linear-gradient(135deg, rgba(34,193,195,1) 0%,     rgba(253,187,45,1) 100%);
     color: white;
@@ -60,6 +60,7 @@
     font-weight: 500px;
     border-radius: 25px;
     border: none;
+    margin-left: calc(50% - 100px);
 }
 .btn-login:hover {
     cursor: pointer;
@@ -83,6 +84,7 @@
 }
 .login__more {
     text-align: center;
+    margin-top: 36px;
 }
 .login__more-text {
     font-size: 20px;

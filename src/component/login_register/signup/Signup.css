@@ -62,7 +62,8 @@
     border: none;
 }
 .btn-signup {
-    width: 50%;
+    width: 200px;
+    margin-left: calc(50% - 100px);
     height: 40px;
     background: linear-gradient(135deg, rgba(34,193,195,1) 0%,     rgba(253,187,45,1) 100%);
     color: white;
@@ -75,6 +76,9 @@
     cursor: pointer;
     background: linear-gradient(45deg, rgb(56, 235, 65) 0%,     rgb(45, 80, 235) 100%);
 
+}
+.signup__have-account {
+    margin-top: 16px;
 }
 .btn__singup-route {
     text-decoration: none;

@@ -93,10 +93,10 @@ function Signup() {
                 onChange={(e) => setEmail(e.target.value)}
               ></input>
             </div>
-            <button className="btn-signup mr-32" >
+            <button className="btn-signup" >
                 Sign Up
             </button>
-            <div className="signup__login-link">
+            <div className="signup__have-account">
               <span>
                 You already have account{" "}
                 <NavLink

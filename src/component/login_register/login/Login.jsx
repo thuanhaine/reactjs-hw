@@ -29,7 +29,7 @@ function Login() {
     })
       .then((data) => data.json())
       .then((data) => {
-        if(data.status == 200){
+        if(data.status === 200){
             alert("SuccessLogin")
             history.replace('/')
     }
@@ -62,7 +62,7 @@ function Login() {
                 onChange={ e => setPassword(e.target.value)}
               ></input>
             </div>
-            <button className="btn-login mr-32">Login</button>
+            <button className="btn-login">Login</button>
             <div className="text__forgot mr-16">
               <span>Forgot Password ?</span>
             </div>
