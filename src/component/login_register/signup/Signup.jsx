@@ -2,6 +2,7 @@ import "./Signup.css";
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
+
 let dataUser = {
   name: String,
   password: String,
