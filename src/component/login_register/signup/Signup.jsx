@@ -39,12 +39,12 @@ function Signup() {
     else {
       if(data.status === 401 )
       {
-        alert("Error Username")
+        alert("Username đã tồn tại")
       }
     
       if(data.status === 402 )
       {
-        alert("Error Email")
+        alert("Email đã tồn tại")
       }
     }
   })

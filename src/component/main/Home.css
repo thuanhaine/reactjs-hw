@@ -1,9 +1,7 @@
-* {
-box-sizing: border-box;
-}
+
 
 .home {
-    background-color: rgb(238, 238, 238);
+    /* background-color: rgb(238, 238, 238); */
     /* background: linear-gradient(180deg, rgb(168, 250, 232) 0%, rgb(89, 224, 241) 100%); */
     margin: 0 auto;
     box-sizing: border-box;
