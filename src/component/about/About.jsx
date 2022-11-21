@@ -1,7 +1,6 @@
 import React from 'react'
 import './About.css'
-import avatar from './avatar.jpg'
-
+import Avatar from './avatar.jpg'
 const About = () => {
   return (
         <>
@@ -17,7 +16,7 @@ const About = () => {
                             <p className="about__text">I am a sociable person who loves to travel to many different places. I often research and learn new knowledge about technology</p>
                         </div>
                     </div>
-                    <img src={avatar} alt="Avatar" className="avatar"/>
+                    <img src={Avatar} alt="Avatar" className="avatar"/>
                     <div className="details">
                         <h2 className="details__title title--color">Details</h2>
                         <div className="content">

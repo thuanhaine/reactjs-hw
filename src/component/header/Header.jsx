@@ -1,12 +1,10 @@
 import "./Header.css";
 import { NavLink } from "react-router-dom";
-import HeaderBtnLogin from "./header_btn_login/Header_btn_login";
-import HeaderUser from "./header_user/Header_user";
+import HeaderBtnLogin from "./header_btn_login/index";
+import HeaderUser from "./header_user/index";
 
-function Header() {
-
-  const isLogin = false;
-
+function Header({ isLogin, onLogout}) {
+  console.log(isLogin)
   return (
     <>
       <div className="heading">
@@ -17,7 +15,7 @@ function Header() {
           <ul className="heading__nav-list">
             <li className="heading__nav-item">
               <NavLink
-                to="/home"
+                to="/"
                 onClick={this}
                 className="heading__nav-item--link"
               >
@@ -64,7 +62,7 @@ function Header() {
         </div>
         <div className="heading__sub_nav">
           <div className="heading__sub_nav-user">
-            {isLogin ? <HeaderUser /> : <HeaderBtnLogin />}
+            {isLogin ? <HeaderUser onLogout={onLogout}/> : <HeaderBtnLogin />}
           </div>
           <div className="heading__sub_nav--search">
             <input

@@ -1,4 +1,4 @@
-import { NavLink, useHistory } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "./Login.css";
 import { useState } from "react";
 
@@ -7,10 +7,11 @@ let dataUser = {
   password: String,
 };
 
-function Login() {
+function Login({ onLogin }) {
   const [inputName, setName] = useState("");
   const [inputPassword, setPassword] = useState("");
-    const history = useHistory();
+  const navigate = useNavigate();
+  console.log(navigate);
   const handleLogin = (e) => {
     e.preventDefault();
     dataUser = {
@@ -28,11 +29,11 @@ function Login() {
     })
       .then((data) => data.json())
       .then((data) => {
-        if(data.status === 200){
-            alert("SuccessLogin")
-            history.replace('/')
-    }
-        else alert("sai")
+        if (data.status === 200) {
+          onLogin(dataUser);
+          // alert("SuccessLogin");
+          navigate("/books", { replace: true });
+        } else alert("sai");
       })
       .catch((err) => console.log(err.data));
   };
@@ -50,7 +51,7 @@ function Login() {
                 required
                 className="login-input-box"
                 placeholder="Nhap username"
-                onChange={e => setName(e.target.value)}
+                onChange={(e) => setName(e.target.value)}
               ></input>
             </div>
             <div className="login-input-form">
@@ -60,7 +61,7 @@ function Login() {
                 required
                 className="login-input-box"
                 placeholder="Nhap Password"
-                onChange={ e => setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
               ></input>
             </div>
             <button className="btn-login">Login</button>

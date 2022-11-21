@@ -1,5 +1,5 @@
 import "./Signup.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate} from "react-router-dom";
 import { useState } from "react";
 
 
@@ -13,6 +13,8 @@ function Signup() {
   const [inputName, setName] = useState("");
   const [inputPassword, setPassword] = useState("");
   const [inputEmail, setEmail] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSignup = (e) => {
     e.preventDefault();
@@ -35,6 +37,8 @@ function Signup() {
     if(data.status === 200 )
       {
         alert("Success")
+        navigate("/login", { replace: true });
+
       }
     
     else {
