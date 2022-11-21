@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
 import { publichRoutes, privateRoutes } from "./routes";
-import DefaultLayout from "./Layout/DefaultLayout";
-
+import {DefaultLayout} from "./Layout";
+import HandleIsLogin from './HandleIsLogin'
+import { Header, Footer} from "./component";
 
 
 function App() {
@@ -14,14 +15,18 @@ function App() {
     setIslogin(true);
   };
 
-  // const handleLogout = () => {
-  //   setIslogin(false);
-  // };
+  const handleLogout = () => {
+    setIslogin(false);
+  };
 
 
-  console.log(privateRoutes);
+
+  console.log(HandleIsLogin.isLogin)
+
+
   return isLogin ? (
-    <Routes>
+      <Routes>
+
       {privateRoutes.map((route, index) => {
         let Layout = DefaultLayout;
         if (route.layout === null) {
@@ -30,16 +35,14 @@ function App() {
           Layout = route.layout;
         }
         const Page =  route.component;
-        console.log(Page)
-        console.log(">>>", Layout)
         return (
           <Route
             key={index}
             path={route.path}
             element={
               <Layout>
-                <Page isLogin={isLogin}/>
-              </Layout>
+                <Page isLogin={isLogin} onLogout={handleLogout}/>
+                </Layout>
             }
           />
         );
@@ -47,6 +50,7 @@ function App() {
     </Routes>
   ) : (
     <Routes>
+
       {publichRoutes.map((route, index) => {
         let Layout = DefaultLayout;
         if (route.layout === null) {
@@ -55,8 +59,6 @@ function App() {
           Layout = route.layout;
         }
         const Page = route.component;
-        console.log(Page)
-        console.log(">>>", Layout)
         return (
           <Route
             key={index}

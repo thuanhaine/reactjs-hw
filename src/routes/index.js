@@ -1,5 +1,5 @@
 
-// import {OnlyComponents} from '../Layout'
+import {OnlyComponents} from '../Layout'
 
 
 import {Login, Signup} from '../component/login_register';
@@ -16,7 +16,7 @@ const  privateRoutes = [
     { path: '/', component: Home },
     { path: '/header', component: Header },
     { path: '/footer', component: Footer },
-    { path: '/about', component: About },
+    { path: '/about', component: About},
     { path: '/books', component: Books},
     { path: '/blog', component: Blog },
     { path: '/contact', component: Contact },

@@ -11,7 +11,6 @@ function Login({ onLogin }) {
   const [inputName, setName] = useState("");
   const [inputPassword, setPassword] = useState("");
   const navigate = useNavigate();
-  console.log(navigate);
   const handleLogin = (e) => {
     e.preventDefault();
     dataUser = {
@@ -32,7 +31,7 @@ function Login({ onLogin }) {
         if (data.status === 200) {
           onLogin(dataUser);
           // alert("SuccessLogin");
-          navigate("/books", { replace: true });
+          navigate("/", { replace: true });
         } else alert("sai");
       })
       .catch((err) => console.log(err.data));
