@@ -23,7 +23,7 @@ function Signup() {
       password: inputPassword,
       email: inputEmail,
     };
-    console.log(dataUser);
+    // console.log(dataUser);
 
   fetch('https://resfulapitest.herokuapp.com/api/signup', {
     method:  'POST',

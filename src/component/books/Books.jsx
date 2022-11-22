@@ -44,13 +44,13 @@ function Books() {
               <ul className="book__nav__direc--list">
                 <li className="book__nav__direc--item" onClick={handlePageLeft}>
                 
-                  <i class="fa fa-angle-left btn-direc-page"></i>
+                  <i className="fa fa-angle-left btn-direc-page"></i>
                 </li>
                 <li className="book__nav__direc--item" onClick={handlePageLeft}>
                   {pageNumber}
                 </li>
                 <li className="book__nav__direc--item" onClick={handlePageRight}>
-                  <i class="fa fa-angle-right btn-direc-page"></i>
+                  <i className="fa fa-angle-right btn-direc-page"></i>
                   
                 </li>
               </ul>
@@ -59,7 +59,7 @@ function Books() {
           <div className="book__container">
             <div className="book__container-subnav">
               <div className="book__container-subnav--box">
-                <i class="fa-solid fa-list-ul"></i>
+                <i className="fa-solid fa-list-ul"></i>
                 <h3 className="book__container-subnav--title">Danh Muc</h3>
               </div>
               <ul className="book__container-subnav__list">

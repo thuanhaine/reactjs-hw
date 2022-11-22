@@ -29,7 +29,7 @@ function Login({ onLogin }) {
       .then((data) => data.json())
       .then((data) => {
         if (data.status === 200) {
-          onLogin(dataUser);
+          onLogin();
           // alert("SuccessLogin");
           navigate("/", { replace: true });
         } else alert("sai");
@@ -78,9 +78,9 @@ function Login({ onLogin }) {
             <div className="login__more">
               <span className="login__more-text">Login More</span>
               <div className="login__more-icon ">
-                <i class="fa fa-google google"></i>
-                <i class="fa fa-facebook facebook"></i>
-                <i class="fa fa-twitter twitter"></i>
+                <i className="fa fa-google google"></i>
+                <i className="fa fa-facebook facebook"></i>
+                <i className="fa fa-twitter twitter"></i>
               </div>
             </div>
           </div>

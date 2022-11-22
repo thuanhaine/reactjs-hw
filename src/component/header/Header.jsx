@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 import HeaderBtnLogin from "./header_btn_login/index";
 import HeaderUser from "./header_user/index";
 
-function Header() {
-  const isLogin =true;
+function Header({isTrue}) {
+  // console.log('isLogin: ', isTrue);
   return (
     <>
       <div className="heading">
@@ -62,7 +62,7 @@ function Header() {
         </div>
         <div className="heading__sub_nav">
           <div className="heading__sub_nav-user">
-            {isLogin ? <HeaderUser /> : <HeaderBtnLogin />}
+            {isTrue ? <HeaderUser /> : <HeaderBtnLogin />}
           </div>
           <div className="heading__sub_nav--search">
             <input
@@ -70,7 +70,7 @@ function Header() {
               className="heading__sub_nav--search-input"
               placeholder="Search"
             />
-            <i class="fa fa-search"></i>
+            <i className="fa fa-search"></i>
           </div>
         </div>
       </div>

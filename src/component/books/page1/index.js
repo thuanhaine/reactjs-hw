@@ -14,7 +14,7 @@ function Page1({ page }) {
     <>
       <ul className="product-list">
         {books.map((book, index) => {
-          if ((page - 1) * 7 <= index && index < page * 7) {
+          if ((page - 1) * 8 <= index && index < page * 8) {
             return (
               <li className="product-item" key={index}>
                 <img

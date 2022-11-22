@@ -58,16 +58,16 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div class="social-list">
-            <i class="fa fa-google"></i>
-            <i class="fa fa-instagram"></i>
-            <i class="fa fa-youtube"></i>
-            <i class="fa fa-pinterest"></i>
-            <i class="fa fa-twitter"></i>
-            <i class="fa fa-linkedin"></i>
+        <div className="social-list">
+            <i className="fa fa-google"></i>
+            <i className="fa fa-instagram"></i>
+            <i className="fa fa-youtube"></i>
+            <i className="fa fa-pinterest"></i>
+            <i className="fa fa-twitter"></i>
+            <i className="fa fa-linkedin"></i>
         </div>
         </div>
-        <p class="coppyright">
+        <p className="coppyright">
           Copyright &copy; 2022 ThuanHai Store | Powered ThuanHai Store
         </p>
       </div>

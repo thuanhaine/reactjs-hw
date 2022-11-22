@@ -5,28 +5,20 @@ import "./App.css";
 import { publichRoutes, privateRoutes } from "./routes";
 import {DefaultLayout} from "./Layout";
 import HandleIsLogin from './HandleIsLogin'
-import { Header, Footer} from "./component";
 
 
 function App() {
   const [isLogin, setIslogin] = useState(false);
-
   const handleLogin = () => {
     setIslogin(true);
   };
-
   const handleLogout = () => {
     setIslogin(false);
   };
 
-
-
-  console.log(HandleIsLogin.isLogin)
-
-
+  
   return isLogin ? (
       <Routes>
-
       {privateRoutes.map((route, index) => {
         let Layout = DefaultLayout;
         if (route.layout === null) {
@@ -40,8 +32,8 @@ function App() {
             key={index}
             path={route.path}
             element={
-              <Layout>
-                <Page isLogin={isLogin} onLogout={handleLogout}/>
+              <Layout isLogin={isLogin} onLogout={handleLogout}>
+                <Page  onLogout={handleLogout}/>
                 </Layout>
             }
           />
