@@ -1,3 +1,49 @@
 .Home {
     min-height: 85vh;
 }
+.Home__Header-book {
+    display: flex;
+    gap: 32px;
+    /* background-color: white; */
+    margin: 62px 15%;
+    position: relative;
+}
+.Home__Header-book__info {
+    margin: 64px 0;
+    flex: 1;
+}
+.Home__Header-book__info-status {
+
+    color: #5F4FCC  ;
+}
+.Home__Header-book__info-name {
+    font-size: 52px;
+    margin: 32px 0;
+}
+.Home__Header-book__info--action {
+    position: absolute;
+    bottom: 0;
+    margin: 64px;
+    display: flex;
+    gap: 16px;
+
+}
+.Home__Header-book__info--btn {
+    bottom: 0;
+    font-size: 18px;
+    padding: 12px;
+    color: #5F4FCC;
+    border: 2px solid #5F4FCC;
+    border-radius: 8px;
+    font-weight: 600;
+
+}
+.Home__Header-book__info--btn:hover {
+    cursor: pointer;
+    background-color: #5F4FCC;
+    color: white;
+}
+.Home__Header-book__img {
+    width: 40%;
+    flex: 1;
+}
