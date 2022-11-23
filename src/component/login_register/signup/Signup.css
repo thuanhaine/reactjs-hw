@@ -1,23 +1,16 @@
 
 .signup-container {
-    width: 100%;
-    height: 100vh;
+    width: auto;
     /* background: linear-gradient(135deg, rgba(34,193,195,1) 0%,     rgba(253,187,45,1) 100%); */
     background-color: #F0F5F8;
-
     position: relative;
     box-sizing: border-box;
 
     
 }
 .signup-content {
-    position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
     margin: auto;
-    width: 450px;
+    width: auto;
     height: 600px;
     background-color: white;
     border-radius: 25px;
@@ -32,9 +25,7 @@
     margin-bottom: 38px;
 }
 .signup-input-form {
-
     margin: 32px;
-
 }
 .signup-input-span {
     display: block;
@@ -73,6 +64,7 @@
     font-weight: 500px;
     border-radius: 25px;
     border: none;
+    margin-top: 16px;
 }
 .btn-signup:hover {
     cursor: pointer;

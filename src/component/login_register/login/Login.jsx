@@ -1,6 +1,8 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import "./Login.css";
 import { useState } from "react";
+import ImgLogin from "../img/index.js"
+
 
 let dataUser = {
   name: String,
@@ -8,6 +10,8 @@ let dataUser = {
 };
 
 function Login({ onLogin }) {
+
+
   const [inputName, setName] = useState("");
   const [inputPassword, setPassword] = useState("");
   const navigate = useNavigate();
@@ -39,53 +43,58 @@ function Login({ onLogin }) {
 
   return (
     <>
-      <form onSubmit={handleLogin}>
-        <div className="login-container">
-          <div className="login-content">
-            <h1 className="login-title">Login</h1>
-            <div className="login-input-form">
-              <span className="login-input-span">Username</span>
-              <input
-                type="text"
-                required
-                className="login-input-box"
-                placeholder="Nhap username"
-                onChange={(e) => setName(e.target.value)}
-              ></input>
-            </div>
-            <div className="login-input-form">
-              <span className="login-input-span">Password</span>
-              <input
-                type="password"
-                required
-                className="login-input-box"
-                placeholder="Nhap Password"
-                onChange={(e) => setPassword(e.target.value)}
-              ></input>
-            </div>
-            <button className="btn-login">Login</button>
-            <div className="text__forgot mr-16">
-              <span>Forgot Password ?</span>
-            </div>
-            <div className="login__register-link mr-16">
-              <span className="">
-                Don't have account ? click{" "}
-                <NavLink className="navLink" to="/signup" onClick={this}>
-                  <strong>Here</strong>
-                </NavLink>
-              </span>
-            </div>
-            <div className="login__more">
-              <span className="login__more-text">Login More</span>
-              <div className="login__more-icon ">
-                <i className="fa fa-google google"></i>
-                <i className="fa fa-facebook facebook"></i>
-                <i className="fa fa-twitter twitter"></i>
+      <div className="login">
+        <div className="login-left">
+          <form onSubmit={handleLogin}>
+              <div className="login-content">
+                <h1 className="login-title">Login</h1>
+                <div className="login-input-form">
+                  <span className="login-input-span">Username</span>
+                  <input
+                    type="text"
+                    required
+                    className="login-input-box"
+                    placeholder="Nhap username"
+                    onChange={(e) => setName(e.target.value)}
+                  ></input>
+                </div>
+                <div className="login-input-form">
+                  <span className="login-input-span">Password</span>
+                  <input
+                    type="password"
+                    required
+                    className="login-input-box"
+                    placeholder="Nhap Password"
+                    onChange={(e) => setPassword(e.target.value)}
+                  ></input>
+                </div>
+                <button className="btn-login">Login</button>
+                <div className="text__forgot mr-16">
+                  <span>Forgot Password ?</span>
+                </div>
+                <div className="login__register-link mr-16">
+                  <span className="">
+                    Don't have account ? click{" "}
+                    <NavLink className="navLink" to="/signup" onClick={this}>
+                      <strong>Here</strong>
+                    </NavLink>
+                  </span>
+                </div>
+                <div className="login__more">
+                  <span className="login__more-text">Login More</span>
+                  <div className="login__more-icon ">
+                    <i className="fa fa-google google"></i>
+                    <i className="fa fa-facebook facebook"></i>
+                    <i className="fa fa-twitter twitter"></i>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+          </form>
         </div>
-      </form>
+        <div className="login-right">
+          <img src={ImgLogin} alt="Img Login" className="login-right__img" />
+        </div>
+      </div>
     </>
   );
 }
