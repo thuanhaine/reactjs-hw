@@ -1,6 +1,6 @@
 import "./Home.css";
-import Avatar from "./avatar.jpg";
 function Home() {
+
   return (
     <div className="Home">
       <div className="Home__Header-book">
@@ -22,7 +22,7 @@ function Home() {
             </button>
           </div>
         </div>
-        <img src={Avatar} alt="imgBook" className="Home__Header-book__img" />
+        <img src="https://bhttvn.com/public/uploads/demo/huong-vi-cua-em/huong-vi-cua-em-la-chut-ngot-ngao-lang-man.jpg" alt="imgBook" className="Home__Header-book__img" />
       </div>
     </div>
   );

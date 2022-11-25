@@ -4,11 +4,63 @@
     gap: 18px;
 }
 .fa.fa-user, .fa.fa-shopping-cart {
-    font-size: 28px;
-    opacity: .6;
+    font-size: 32px;
+    cursor: pointer;
+    position: relative;
+    padding: 4px;
+    color: black;
 }
-.fa.fa-user:hover,
+/* .fa.fa-user:hover,
 .fa.fa-shopping-cart:hover {
     cursor: pointer;
     opacity: 1;
+} */
+
+.user__list {
+    position: absolute;
+    top: 36px;
+    right: -12px;
+    display: inline-block;
+    display: none;
+    padding: 16px 0 ;
+    border-radius: 8px;
+    background-color: rgb(225, 239, 252);
 }
+
+.user__list-item {
+    font-size: 20px;
+    font-weight: 500;
+    display: inline-block;
+    width: 180px;
+    font-family:  Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 16px;
+    color: #7446A1;
+    
+  }
+  .user__list-item-name {
+    font-size: 24px;
+    font-weight: 600;
+    display: inline-block;
+    width: 180px;
+    font-family:  Arial, Helvetica, sans-serif;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 16px;
+    color: #7446A1;
+    margin: 0 auto;
+}
+  .fa-shopping-cart:hover .cart__list{
+    display: block;
+
+  }
+  .user__list-item:hover {
+    background-color: rgb(200, 232, 238);
+    color: black;
+      }
+  .fa.fa-user:hover .user__list{
+    display: block;
+
+  }
