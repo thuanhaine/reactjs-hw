@@ -1,7 +1,8 @@
 import "./Signup.css";
 import { NavLink, useNavigate} from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ImgLogin from "../img/index.js"
+import {Loading} from '../../index'
 
 
 
@@ -11,14 +12,28 @@ let dataUser = {
   email: String,
 };
 
+let random = Math.floor(Math.random() * ImgLogin.length);
 function Signup() {
   const [inputName, setName] = useState("");
   const [inputPassword, setPassword] = useState("");
   const [inputEmail, setEmail] = useState("");
-
+  const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
 
+
+  const [randomImg, setRandomImg] = useState(random)
+    useEffect(() => {
+      const inter = setInterval(()=> {
+        random = Math.floor(Math.random() * ImgLogin.length);
+        setRandomImg(random)
+      }, 3000)
+      return () =>      clearInterval(inter)
+  },[randomImg])
+
+
+
   const handleSignup = (e) => {
+    setIsLoading(true)
     e.preventDefault();
     dataUser = {
       name: inputName,
@@ -39,6 +54,8 @@ function Signup() {
     if(data.status === 200 )
       {
         alert("Success")
+      setIsLoading(false)
+
         navigate("/login", { replace: true });
 
       }
@@ -46,12 +63,14 @@ function Signup() {
     else {
       if(data.status === 401 )
       {
-        alert("Username đã tồn tại")
+      setIsLoading(false)
+      alert("Username đã tồn tại")
       }
     
       if(data.status === 402 )
       {
-        alert("Email đã tồn tại")
+      setIsLoading(false)
+      alert("Email đã tồn tại")
       }
     }
   })
@@ -65,6 +84,8 @@ function Signup() {
     <>
     <div className="login">
         <div className="login-left">
+        {isLoading? <div className="login-loading"><Loading /></div> : <></>}
+
           <form onSubmit={handleSignup}>
             <div className="signup-container">
               <div className="signup-content">
@@ -122,7 +143,7 @@ function Signup() {
           </form>
       </div>
         <div className="login-right">
-          <img src={ImgLogin} alt="Img Login" className="login-right__img" />
+          <img src={ImgLogin[randomImg]} alt="Img Login" className="login-right__img" />
         </div>
       </div>
     </>

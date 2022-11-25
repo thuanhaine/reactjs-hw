@@ -1,17 +1,31 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import "./Login.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ImgLogin from "../img/index.js";
 import {Loading} from '../../index'
+
+
 let dataUser = {
   name: String,
   password: String,
 };
+let random = Math.floor(Math.random() * ImgLogin.length);
 
 function Login({ onLogin }) {
   const [inputName, setName] = useState("");
   const [inputPassword, setPassword] = useState("");
   const [isloading, setIsLoading] = useState(false);
+  const [randomImg, setRandomImg] = useState(random)
+    useEffect(() => {
+      const inter = setInterval(()=> {
+        random = Math.floor(Math.random() * ImgLogin.length);
+        setRandomImg(random)
+      }, 3000)
+      return () =>      clearInterval(inter)
+  },[randomImg])
+
+
+
   const navigate = useNavigate();
   const handleLogin = (e) => {
     e.preventDefault();
@@ -19,7 +33,6 @@ function Login({ onLogin }) {
       name: inputName,
       password: inputPassword,
     };
-    console.log(dataUser);
     setIsLoading(true);
     fetch("https://resfulapitest.herokuapp.com/api/login", {
       method: "POST",
@@ -31,7 +44,7 @@ function Login({ onLogin }) {
       .then((data) => data.json())
       .then((data) => {
         if (data.status === 200) {
-          onLogin();
+          onLogin(dataUser);
           // alert("SuccessLogin");
           setIsLoading(false)
           navigate("/", { replace: true });
@@ -95,7 +108,7 @@ function Login({ onLogin }) {
           </form>
         </div>
         <div className="login-right">
-          <img src={ImgLogin} alt="Img Login" className="login-right__img" />
+          <img src={ImgLogin[randomImg]} alt="Img Login" className="login-right__img" />
         </div>
       </div>
     </>

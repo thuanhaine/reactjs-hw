@@ -1,6 +1,7 @@
 import "./Page1.css";
 import { useState, useEffect } from "react";
 
+
 function Page1({ page }) {
   const [books, setBooks] = useState([]);
   useEffect(() => {

@@ -4,16 +4,26 @@ import "./App.css";
 
 import { publichRoutes, privateRoutes } from "./routes";
 import {DefaultLayout} from "./Layout";
-import HandleIsLogin from './HandleIsLogin'
 
 
 function App() {
+  const [userName, setUserName] = useState('')
   const [isLogin, setIslogin] = useState(false);
-  const handleLogin = () => {
+
+
+
+  const handleLogin = (data) => {
     setIslogin(true);
+    setUserName(data.name)
+    console.log("data name " + data.name);
+    // localStorage.setItem('userName',userName )
   };
-  const handleLogout = () => {
+  console.log("User Name " + userName);
+
+  const handleLogout = (data) => {
     setIslogin(false);
+    setUserName(data.name)
+    // localStorage.removeItem('userName',userName)
   };
 
   

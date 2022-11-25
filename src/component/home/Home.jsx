@@ -16,8 +16,8 @@ function Home() {
             odit corrupti at, quas reiciendis!
           </p>
           <div className="Home__Header-book__info--action">
-            <button className="Home__Header-book__info--btn">Buy Now</button>
-            <button className="Home__Header-book__info--btn">
+            <button className="Home__Header-book__info--btn-buy">Buy Now</button>
+            <button className="Home__Header-book__info--btn-read">
               Read Sample
             </button>
           </div>

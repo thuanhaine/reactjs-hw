@@ -1,9 +1,9 @@
 
-import {OnlyComponents} from '../Layout'
+// import {OnlyComponents} from '../Layout'
 
 
 import {Login, Signup} from '../component/login_register';
-import { About, Contact, Books, Blog, Header, Home, Footer } from '../component';
+import { About, Contact, Books, Blog, Header, Home, Footer, QLUser } from '../component';
 
 const publichRoutes = [
     { path: '/', component: Home },
@@ -20,6 +20,7 @@ const  privateRoutes = [
     { path: '/books', component: Books},
     { path: '/blog', component: Blog },
     { path: '/contact', component: Contact },
+    { path: '/qluser', component: QLUser },
 ]
 
 export {publichRoutes, privateRoutes}

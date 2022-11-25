@@ -1,9 +1,4 @@
 
-.loading{
-    position: relative;
-    top: -120px;
-    left: 190px;
-}
 .loading--1 {
     position: absolute;
     /* border-top: 10px solid transparent; */

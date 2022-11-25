@@ -6,6 +6,7 @@ export {default as Footer} from './footer/Footer';
 export {default as Home} from './home/Home';
 export {default as About} from './about/About';
 export {default as Loading} from './loading/Loading';
+export {default as QLUser} from './QLUser/QLUser';
 
 
 

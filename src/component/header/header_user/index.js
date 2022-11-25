@@ -15,9 +15,10 @@ function Header_user() {
                 So du: <strong>10000</strong>d
               </p>
             </li>
-            <li className="user__list-item">Thong Tin</li>
-            <li className="user__list-item">Doi mat khau</li>
-            <li className="user__list-item">Dang Xuat</li>
+            <li ><NavLink className="user__list-item" to="/thongtin">Thong Tin</NavLink></li>
+            <li ><NavLink className="user__list-item" to="/qluser" onClick={this}>Quan ly tai khoan</NavLink></li>
+            <li ><NavLink className="user__list-item" to="/doimatkhau">Doi mat khau</NavLink></li>
+            <li ><NavLink className="user__list-item" to="/">Dang Xuat</NavLink></li>
           </ul>
         </i>
       </div>
