@@ -1,16 +1,28 @@
 import "./Page1.css";
 import { useState, useEffect } from "react";
 
-
 function Page1({ page }) {
   const [books, setBooks] = useState([]);
+  // useEffect(() => {
+  //   fetch(`${process.env.REACT_APP_API}/api/get`, {
+  //     method: 'GET',
+  //     mode: 'no-cors'
+  //   })
+  //     .then((res) => res.json())
+  //     .then(res => {
+  //       setBooks(res)
+  //       console.log(books)
+  //     })
+  // }, []);
+
   useEffect(() => {
-    fetch("https://resfulapitest.herokuapp.com/api/get")
-      .then((res) => res.json())
-      .then((data) => {
-        setBooks(data);
-      });
-  }, []);
+    fetch(`${process.env.REACT_APP_API}/api/get`)
+    .then((res) => res.json())
+    .then((res) =>{
+        setBooks(res)
+      
+    })
+  })
   return (
     <>
       <ul className="product-list">

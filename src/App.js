@@ -7,27 +7,31 @@ import {DefaultLayout} from "./Layout";
 
 
 function App() {
-  const [userName, setUserName] = useState('')
-  const [isLogin, setIslogin] = useState(false);
+  const [isLogin, setIslogin] = useState({
+    status: false,
+    userName: ''
+  });
 
 
 
   const handleLogin = (data) => {
-    setIslogin(true);
-    setUserName(data.name)
-    console.log("data name " + data.name);
+    setIslogin({
+      status: true,
+      userName: data.name
+    });
     // localStorage.setItem('userName',userName )
   };
-  console.log("User Name " + userName);
-
-  const handleLogout = (data) => {
-    setIslogin(false);
-    setUserName(data.name)
+  console.log(isLogin)
+  const handleLogout = () => {
+    setIslogin({
+      status: false,
+      userName: ""
+    });
     // localStorage.removeItem('userName',userName)
   };
 
   
-  return isLogin ? (
+  return isLogin.status ? (
       <Routes>
       {privateRoutes.map((route, index) => {
         let Layout = DefaultLayout;
@@ -42,8 +46,8 @@ function App() {
             key={index}
             path={route.path}
             element={
-              <Layout isLogin={isLogin} onLogout={handleLogout}>
-                <Page  onLogout={handleLogout}/>
+              <Layout isLogin={isLogin} onHandleLogout={handleLogout}>
+                <Page  isLogin={isLogin}/>
                 </Layout>
             }
           />

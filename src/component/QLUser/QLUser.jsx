@@ -1,9 +1,10 @@
 import "./QLUser.css";
 import { useState } from "react";
+import defaulyAvatar from './user.svg'
 function QLUer() {
   const [listUser, setListUser] = useState([]);
   const [numberShow, setNumberShow] = useState(10);
-  fetch("https://resfulapitest.herokuapp.com/api/getUser")
+  fetch(`${process.env.REACT_APP_API}/api/getUser`)
     .then((res) => res.json())
     .then((res) => {
       setListUser(res);
@@ -18,7 +19,7 @@ function QLUer() {
                 return (
                     <li key={user.id} className="qluser__list-item">
                     <img
-                      src="https://bhttvn.com/public/uploads/demo/huong-vi-cua-em/huong-vi-cua-em-la-chut-ngot-ngao-lang-man.jpg"
+                      src={user.urlAvatar || defaulyAvatar}
                       alt="imgUser"
                       className="qluer__list-item--avatar"
                     />

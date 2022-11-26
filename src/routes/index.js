@@ -3,7 +3,7 @@
 
 
 import {Login, Signup} from '../component/login_register';
-import { About, Contact, Books, Blog, Header, Home, Footer, QLUser } from '../component';
+import { About, Contact, Books, Blog, Header, Home, Footer, QLUser, InforUser } from '../component';
 
 const publichRoutes = [
     { path: '/', component: Home },
@@ -21,6 +21,7 @@ const  privateRoutes = [
     { path: '/blog', component: Blog },
     { path: '/contact', component: Contact },
     { path: '/qluser', component: QLUser },
+    { path: '/inforuser', component: InforUser },
 ]
 
 export {publichRoutes, privateRoutes}

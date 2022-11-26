@@ -42,7 +42,7 @@ function Signup() {
     };
     // console.log(dataUser);
 
-  fetch('https://resfulapitest.herokuapp.com/api/signup', {
+  fetch(`${process.env.REACT_APP_API}/api/signup`, {
     method:  'POST',
     headers: {
       'Content-Type': 'application/json',

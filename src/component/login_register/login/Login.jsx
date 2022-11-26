@@ -34,7 +34,7 @@ function Login({ onLogin }) {
       password: inputPassword,
     };
     setIsLoading(true);
-    fetch("https://resfulapitest.herokuapp.com/api/login", {
+    fetch(`${process.env.REACT_APP_API}/api/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

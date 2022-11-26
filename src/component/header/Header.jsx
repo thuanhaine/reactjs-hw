@@ -3,8 +3,9 @@ import { NavLink } from "react-router-dom";
 import HeaderBtnLogin from "./header_btn_login/index";
 import HeaderUser from "./header_user/index";
 
-function Header({isTrue}) {
+function Header({isTrue, onLogOut}) {
   // console.log('isLogin: ', isTrue);
+
   return (
     <>
       <div className="heading">
@@ -62,7 +63,7 @@ function Header({isTrue}) {
         </div>
         <div className="heading__sub_nav">
           <div className="heading__sub_nav-user">
-            {isTrue ? <HeaderUser /> : <HeaderBtnLogin />}
+            {isTrue ? <HeaderUser isUser={isTrue} onLogOut2={onLogOut}/> : <HeaderBtnLogin />}
           </div>
           <div className="heading__sub_nav--search">
             <input

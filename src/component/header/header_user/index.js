@@ -1,6 +1,27 @@
 import "./Header_user.css";
 import {NavLink} from "react-router-dom"
-function Header_user() {
+import { useState, useEffect } from "react"
+function Header_user({isUser, onLogOut2}) {
+
+  const [user, setUser] = useState({
+    role: ''
+  })
+
+
+  useEffect(() => {
+  fetch(`${process.env.REACT_APP_API}/api/getOneUser`,{
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(isUser),
+  })
+  .then(res => res.json())
+  .then(res => {
+    setUser(res)
+  })
+  },[])
+  console.log(user.role)
   return (
     <>
       {" "}
@@ -10,15 +31,10 @@ function Header_user() {
         <i className="fa fa-user" onClick={this}>
           <ul className="user__list">
             <span className="user__list-item-name">Thuan Hai</span>
-            <li className="user__list-item user__list-item--money">
-              <p className="user__list-item--money-p">
-                So du: <strong>10000</strong>d
-              </p>
-            </li>
-            <li ><NavLink className="user__list-item" to="/thongtin">Thong Tin</NavLink></li>
-            <li ><NavLink className="user__list-item" to="/qluser" onClick={this}>Quan ly tai khoan</NavLink></li>
+            <li ><NavLink className="user__list-item" to="/inforuser">Thong Tin</NavLink></li>
+            {user.role === "Admin" ? <li ><NavLink className="user__list-item" to="/qluser" onClick={this}>Quan ly User</NavLink></li> : <></>}
             <li ><NavLink className="user__list-item" to="/doimatkhau">Doi mat khau</NavLink></li>
-            <li ><NavLink className="user__list-item" to="/">Dang Xuat</NavLink></li>
+            <li ><NavLink className="user__list-item" onClick={onLogOut2} to="/">Dang Xuat</NavLink></li>
           </ul>
         </i>
       </div>
