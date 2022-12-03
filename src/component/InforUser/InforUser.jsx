@@ -1,7 +1,10 @@
 
 
-function InforUser({isTrue}) {
-    console.log(isTrue);
+function InforUser() {
+
+    
+    console.log(localStorage.getItem('userId'))
+    
     return ( <>
         <h1>User</h1>
     </> );

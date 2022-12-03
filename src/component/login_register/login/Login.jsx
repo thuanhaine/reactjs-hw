@@ -44,7 +44,10 @@ function Login({ onLogin }) {
       .then((data) => data.json())
       .then((data) => {
         if (data.status === 200) {
-          onLogin(dataUser);
+          
+          localStorage.setItem('userId', data.id)
+
+          onLogin(data.id);
           // alert("SuccessLogin");
           setIsLoading(false)
           navigate("/", { replace: true });

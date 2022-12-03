@@ -8,6 +8,7 @@ export {default as About} from './about/About';
 export {default as Loading} from './loading/Loading';
 export {default as QLUser} from './QLUser/QLUser';
 export {default as InforUser} from './InforUser/InforUser';
+export {default as DetailBook} from './detailBook/DetailBook';
 
 
 

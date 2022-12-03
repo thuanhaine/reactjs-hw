@@ -1,61 +1,53 @@
 import "./Home.css";
 import { useState, useEffect } from "react";
-
-let random = 0;
+import { NavLink, useLocation } from "react-router-dom";
+import {ListBookDefautl} from './dataDefautl'
 
 function Home() {
-  const [books, setBooks] = useState([]);
-  const [book, setBook] = useState({
-    name: "",
-    urlImg: "",
-    description: "",
-  });
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_API}/api/get`)
-      .then((res) => res.json())
-      .then((res) => {
-        setBooks(res);
-      });
-  }, []);
-  useEffect(() => {
-    const inter = setInterval(() => {
-      random = Math.floor(Math.random() * books.length);
-      setBook(books[random]);
-    }, 8000);
+  let url = useLocation()
+  const [currentBook, setCurrentBook] = useState(Math.floor(Math.random() * ListBookDefautl.length))
+     useEffect(() => {
+    const inter = setInterval(() => { 
+      setCurrentBook(currentBook < (ListBookDefautl.length  -1) ? currentBook + 1 : 0) ;
+      console.log(currentBook)
+    }, 5000);
 
     return () => clearInterval(inter);
-  }, [book]);
+  }, [currentBook]);
+
   return (
     <div className="Home">
       <div className="Home__Header-book">
-        {books.map((book, index) => {
-          if (index === random)
+        {ListBookDefautl.map((book, index) => {
+          if (index === currentBook)
             return (
-              <>
-                <div className="Home__Header-book__info">
-                  <h3 className="Home__Header-book__info-status">
-                    New Release
-                  </h3>
-                  <h1 className="Home__Header-book__info-name">{book.name}</h1>
-                  <p className="Home__Header-book__info-descrip">
-                    {book.description ||
-                      "Lorem ipsum dolor sit amet consectetur adipisicing elit. At facere odit reiciendis, vitae, iste ab temporibus eligendi sunt maiores possimus distinctio architecto quisquam natus dolore quam obcaecati pariatur? Ullam, earum?"}{" "}
-                  </p>
-                  <div className="Home__Header-book__info--action">
-                    <button className="Home__Header-book__info--btn-buy">
-                      Buy Now
-                    </button>
-                    <button className="Home__Header-book__info--btn-read">
-                      Read Sample
-                    </button>
+
+               <div key={index} className="Home__Header-book--container">
+                  <div className="Home__Header-book__info" >
+                    <h3 className="Home__Header-book__info-status">
+                      New Release
+                    </h3>
+                    <h1 className="Home__Header-book__info-name">{book.name}</h1>
+                    <p className="Home__Header-book__info-descrip">
+                      {book.description ||
+                        "Lorem ipsum dolor sit amet consectetur adipisicing elit. At facere odit reiciendis, vitae, iste ab temporibus eligendi sunt maiores possimus distinctio architecto quisquam natus dolore quam obcaecati pariatur? Ullam, earum?"}{" "}
+                    </p>
+                    <div className="Home__Header-book__info--action">
+                      <NavLink className="Home__Header-book__info--btn-buy" to={`${url}/detailbook`} BookId={book.id}>
+                        Buy Now
+                      </NavLink>
+                      <button className="Home__Header-book__info--btn-read">
+                        Read Sample
+                      </button>
+                    </div>
                   </div>
-                </div>
-                <img
-                  src={book.urlImg}
-                  alt="imgBook"
-                  className="Home__Header-book__img"
-                />
-              </>
+                  <img
+                    src={book.urlImg}
+                    alt="imgBook"
+                    className="Home__Header-book__img"
+                  />
+               </div>
+
             );
         })}
       </div>

@@ -8,6 +8,9 @@
     margin: 62px 15%;
     position: relative;
 }
+.Home__Header-book--container {
+    display: flex;
+}
 .Home__Header-book__info {
     margin: 64px 0;
     flex: 1;
@@ -38,7 +41,7 @@
     font-weight: 600;
     opacity: .8;
     background-color: #5F4FCC;
-
+    text-decoration: none;
 }
 .Home__Header-book__info--btn-buy:hover {
     cursor: pointer;

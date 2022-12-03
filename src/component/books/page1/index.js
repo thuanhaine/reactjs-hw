@@ -1,19 +1,10 @@
 import "./Page1.css";
 import { useState, useEffect } from "react";
+import {NavLink, useLocation} from 'react-router-dom'
 
 function Page1({ page }) {
+  let url = useLocation()
   const [books, setBooks] = useState([]);
-  // useEffect(() => {
-  //   fetch(`${process.env.REACT_APP_API}/api/get`, {
-  //     method: 'GET',
-  //     mode: 'no-cors'
-  //   })
-  //     .then((res) => res.json())
-  //     .then(res => {
-  //       setBooks(res)
-  //       console.log(books)
-  //     })
-  // }, []);
 
   useEffect(() => {
     fetch(`${process.env.REACT_APP_API}/api/get`)
@@ -22,7 +13,7 @@ function Page1({ page }) {
         setBooks(res)
       
     })
-  })
+  }, [])
   return (
     <>
       <ul className="product-list">
@@ -55,7 +46,7 @@ function Page1({ page }) {
                       : "Chưa bán được gì !"}
                   </p>
                 </div>
-                <button className="product-btn-buy">Buy</button>
+                <NavLink className="product-btn-buy" to={`${url}/detailbook`}>Buy</NavLink>
               </li>
             );
           }

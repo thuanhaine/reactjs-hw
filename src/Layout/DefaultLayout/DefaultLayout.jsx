@@ -1,11 +1,10 @@
 import { Header, Footer } from "../../component";
 import "./DefaultLayout.css";
 // import Books from '../books';
-function DefaultLayout({ children, isLogin, onHandleLogout }) {
-        console.log(isLogin)
+function DefaultLayout({ children, onHandleLogout }) {
       return (
       <>
-              <Header isTrue={isLogin} onLogOut={onHandleLogout}/>
+              <Header onLogOut={onHandleLogout}/>
               <div className='DefaultLayout--content'>
               {children}
               </div>

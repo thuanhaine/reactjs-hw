@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -7,31 +7,30 @@ import {DefaultLayout} from "./Layout";
 
 
 function App() {
-  const [isLogin, setIslogin] = useState({
-    status: false,
-    userName: ''
-  });
+  const [isLogin, setIslogin] = useState(false)
+  const [render , setRender] = useState(false)
 
+  useEffect(() => {
+    const isUSer = localStorage.getItem('userId');
+    if(isUSer) {
+      setIslogin(true)
+      console.log("hello")
+    } 
 
-
+  },[render])
+ 
   const handleLogin = (data) => {
-    setIslogin({
-      status: true,
-      userName: data.name
-    });
-    // localStorage.setItem('userName',userName )
-  };
-  console.log(isLogin)
-  const handleLogout = () => {
-    setIslogin({
-      status: false,
-      userName: ""
-    });
-    // localStorage.removeItem('userName',userName)
+    setIslogin(true)
+    console.log("login id " + data)
   };
 
-  
-  return isLogin.status ? (
+  const handleLogout = () => {
+    localStorage.removeItem('userId')
+    setIslogin(false)
+    setRender(!render)
+  };
+
+  return isLogin ? (
       <Routes>
       {privateRoutes.map((route, index) => {
         let Layout = DefaultLayout;
@@ -46,8 +45,8 @@ function App() {
             key={index}
             path={route.path}
             element={
-              <Layout isLogin={isLogin} onHandleLogout={handleLogout}>
-                <Page  isLogin={isLogin}/>
+              <Layout  onHandleLogout={handleLogout}>
+                <Page  />
                 </Layout>
             }
           />

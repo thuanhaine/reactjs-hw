@@ -1,7 +1,6 @@
 
 // import {OnlyComponents} from '../Layout'
 
-
 import {Login, Signup} from '../component/login_register';
 import { About, Contact, Books, Blog, Header, Home, Footer, QLUser, InforUser } from '../component';
 
@@ -11,7 +10,6 @@ const publichRoutes = [
     { path: '/signup', component: Signup, layout: null},
 
 ]
-
 const  privateRoutes = [
     { path: '/', component: Home },
     { path: '/header', component: Header },

@@ -27,7 +27,7 @@
   height: 100%;
 
 }
-.heading__nav-item--link {
+.heading__nav-item--link, .heading__nav-item--p {
   position: relative;
   display: block;
   height: 100%;
@@ -36,8 +36,12 @@
   font-weight: 600;
   opacity: .8;
   border: 4px solid #F0F5F8;
+  color: #7446A1;
+  font-weight: 600;
 }
-
+.heading__nav-item--p {
+  opacity: .5;
+}
 .heading__nav-item--link:hover {
   border-bottom: 4px solid #ccc;
   opacity: 1;
@@ -51,6 +55,7 @@
   flex-direction: row-reverse;
 }
 .heading__sub_nav--search-input {
+  display: block;
   border: none;
   border-bottom: 4px solid #ccc;
   outline: none;
@@ -60,6 +65,7 @@
   background-color: #F0F5F8;
 }
 .fa.fa-search {
+  display: block;
   font-size: 22px;
   padding: 4px;
 }
